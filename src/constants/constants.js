@@ -1,1 +1,1 @@
-export const START_DRAG = 'START_DRAG';
+export const START_DROP = 'START_DROP';

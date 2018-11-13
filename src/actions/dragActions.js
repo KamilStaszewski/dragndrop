@@ -1,9 +1,13 @@
-import { START_DRAG } from '../constants/constants';
+import {
+  START_DROP
+} from '../constants/constants';
 
-export const startDragging = (event) => {
-  console.log("You clicked on user: ", event.target.id);
+export const dropItem = (event, id) => {
+  console.log(event.dataTransfer.getData("id"))
+  console.log(id)
   return {
-      type: START_DRAG,
-      payload: event.target.id
+    type: START_DROP,
+    payload: event.dataTransfer.getData("id"),
+    payload1: id
   }
 };
