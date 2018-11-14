@@ -18,20 +18,22 @@ const initialState = {
       category: "complete",
       bgcolor: "skyblue"
     }
-  ]
+  ],
+  count: 0
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
     case START_DROP:
       let tasks = state.items.filter((item) => {
-        if (item.name == action.payload) {
+        if (item.name === action.payload) {
           item.category = action.payload1;
         }
         return item;
       });
       return Object.assign({}, state, {
-        items: tasks
+        items: tasks,
+        count: state.count + 1
       });
     default:
       return state;
