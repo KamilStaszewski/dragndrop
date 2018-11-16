@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import LeftColumn from "./components/leftColumn";
+import RightColumn from "./components/rightColumn";
 import { dropItem } from './actions/dragActions';
 
 class App extends Component {
 
   startDragging = (ev, id) => {
-    console.log('dragstart:',id);
     ev.dataTransfer.setData("id", id);
     }
 
@@ -41,12 +41,9 @@ class App extends Component {
             <LeftColumn tasks={tasks.wip}
                         dragOver={this.dragOver}
                         dropItem={this.props.dropItem} />
-        <div className="droppable" 
-            onDragOver={(e)=>this.dragOver(e)}
-            onDrop={(e)=>this.props.dropItem(e, "complete")}>
-             <span className="task-header">COMPLETED</span>
-             {tasks.complete}
-        </div>
+             <RightColumn tasks={tasks.complete}
+                        dragOver={this.dragOver}
+                        dropItem={this.props.dropItem} />                       
     </div>
     )
   }

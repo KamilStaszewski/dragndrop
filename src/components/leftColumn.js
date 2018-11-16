@@ -1,6 +1,6 @@
 import React from 'react'
 
-const leftColumn = ({tasks, dragOver, dropItem}) => {
+const LeftColumn = ({tasks, dragOver, dropItem}) => {
   return (
     <div className="wip"
       onDragOver={(e) => dragOver(e)}
@@ -11,4 +11,4 @@ const leftColumn = ({tasks, dragOver, dropItem}) => {
   )
 }
 
-export default leftColumn
+export default LeftColumn
