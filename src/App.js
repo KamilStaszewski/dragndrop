@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import './App.css';
 import LeftColumn from "./components/leftColumn";
 import RightColumn from "./components/rightColumn";
-import { dropItem } from './actions/dragActions';
+import Header from "./components/header";
+import { dropItem, resetState } from './actions/dragActions';
 
 class App extends Component {
 
@@ -28,7 +29,7 @@ class App extends Component {
           <div key={t.name} 
               onDragStart = {(e) => this.startDragging(e, t.name)}
               draggable
-              className="draggable"
+              className="tasks"
               style = {{backgroundColor: t.bgcolor}}
           >
               {t.name}
@@ -36,15 +37,16 @@ class App extends Component {
       );
   });
     return (
-        <div className="container-drag">
-        <h2 className="header">{this.props.count}</h2>
+        <div className="container">
+            <Header count={this.props.count}
+                    resetState={this.props.resetState} />
             <LeftColumn tasks={tasks.wip}
                         dragOver={this.dragOver}
-                        dropItem={this.props.dropItem} />
-             <RightColumn tasks={tasks.complete}
+                        dropItem={this.props.dropItem} />           
+            <RightColumn tasks={tasks.complete}
                         dragOver={this.dragOver}
                         dropItem={this.props.dropItem} />                       
-    </div>
+        </div>
     )
   }
 }
@@ -55,5 +57,5 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { dropItem })(App);
+export default connect(mapStateToProps, { dropItem, resetState })(App);
 

@@ -1,1 +1,2 @@
 export const START_DROP = 'START_DROP';
+export const GET_INITIAL_STATE = 'GET_INITIAL_STATE';

@@ -4,11 +4,11 @@
   margin: 15px auto;
 }
 
-.container-drag {
+.container {
   text-align: center;
 }
 
-.wip {
+.leftColumn {
   position: absolute;
   width: 150px;
   height: 100vh;
@@ -18,31 +18,42 @@
   border-right: 1px dotted;
 }
 
-.header {
-  display: inline-block;
+.header__headline {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  background-color: #E0E0E0;
+  background-color: #EEEEEE;
   width:100%;
 }
 
-.task-header {
+.header__button {
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.leftColumn__header,
+.rightColumn__header {
   display: inline-block;
-  background-color: skyblue;
+  background-color: #ccc;
   width:100%;
 }
 
-.droppable {
+.rightColumn {
   position: absolute;
   width: 150px;
   height: 100vh;
   right: 0;
   top: 10;
-  background-color: #9E9E9E;
+  background-color: #EEEEEE;
   border-left: 1px dotted;
 }
 
-.draggable {
+.tasks {
   width: 100px;
   height: 100px;
   background-color: yellow;

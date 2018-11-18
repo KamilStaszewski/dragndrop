@@ -1,5 +1,6 @@
 import {
-  START_DROP
+  START_DROP,
+  GET_INITIAL_STATE
 } from '../constants/constants';
 
 export const dropItem = (event, id) => {
@@ -7,5 +8,11 @@ export const dropItem = (event, id) => {
     type: START_DROP,
     payload: event.dataTransfer.getData("id"),
     payload1: id
+  }
+};
+
+export const resetState = () => {
+  return {
+    type: GET_INITIAL_STATE
   }
 };
