@@ -2,10 +2,10 @@ import React from 'react'
 
 const LeftColumn = ({tasks, dragOver, dropItem}) => {
   return (
-    <div className="wip"
+    <div className="leftColumn"
       onDragOver={(e) => dragOver(e)}
       onDrop={(e) => dropItem(e, "wip")}>
-      <span className="task-header">TO DO</span>
+      <span className="leftColumn__header">TO DO</span>
       {tasks}
     </div>
   )
