@@ -20,14 +20,6 @@ Then go to localhost:3000 :)
 
 
 
-### Development
-
-Want to contribute? Great!
-
-My app is completely open source so you are free to make PR's. Everyone is welcomed to contribute! 
-
-
-
 
 ## Initial Machine Setup
 
