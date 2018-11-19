@@ -1,0 +1,13 @@
+{
+  "name": "zadanie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.js",
+  "scripts": {
+    "zadanie1": "node zadanie1.js",
+    "zadanie2": "node zadanie2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
